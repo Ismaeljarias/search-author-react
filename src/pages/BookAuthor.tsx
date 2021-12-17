@@ -48,6 +48,8 @@ export const BookAuthor = () => {
     return getBookDetail(keyId).then((book) => setBookDetails(book));
   }, []);
 
+  console.log(authorDetails);
+
   return (
     <div sx={{ width: "100%", maxWidth: 1200, margin: "0 auto 6em" }}>
       <div
@@ -90,28 +92,39 @@ export const BookAuthor = () => {
           onKeyPress={(e) => getAuthor(e)}
         />
       </div>
-      <div>
+      <div sx={{ width: 750, margin: "0 auto" }}>
         {authorData && !authorDetails ? (
-          <ul>
-            {authorData?.map((author) => (
-              <AuthorData
-                key={author.key}
-                onClick={() => authorClick(author.key)}
-                name={author.name}
-              />
-            ))}
-          </ul>
+          <>
+            <h3>List of Authors</h3>
+            <ul sx={{ margin: 0, padding: 0 }}>
+              {authorData?.map((author) => (
+                <AuthorData
+                  key={author.key}
+                  onClick={() => authorClick(author.key)}
+                  name={author.name}
+                  birth={author.birth_date || ""}
+                  death={author.death_date || ""}
+                  topWork={author.top_work}
+                  bookCount={author.work_count}
+                />
+              ))}
+            </ul>
+          </>
         ) : null}
         {authorDetails && !bookDetails ? (
-          <ul>
-            {authorDetails?.entries?.map((detail) => (
-              <AuthorWork
-                key={detail.key}
-                title={detail.title}
-                onClick={() => bookClick(detail.key)}
-              />
-            ))}
-          </ul>
+          <>
+            <h3>List of books</h3>
+            <ul sx={{ margin: 0, padding: 0 }}>
+              {authorDetails?.entries?.map((detail) => (
+                <AuthorWork
+                  key={detail.key}
+                  title={detail.title}
+                  onClick={() => bookClick(detail.key)}
+                  firstSentence={detail.first_sentence?.value || ""}
+                />
+              ))}
+            </ul>
+          </>
         ) : null}
       </div>
 

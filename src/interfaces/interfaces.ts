@@ -13,6 +13,7 @@ export interface Info {
   name: string;
   alternate_names?: string[];
   birth_date?: string;
+  death_date?: string;
   top_work: string;
   work_count: number;
   top_subjects?: string[];
@@ -42,6 +43,7 @@ export interface Entry {
   subject_people?: string[];
   excerpts?: Excerpt[];
   subject_times?: string[];
+  first_sentence?: Created;
 }
 
 export interface Author {
