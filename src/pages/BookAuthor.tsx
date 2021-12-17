@@ -48,8 +48,6 @@ export const BookAuthor = () => {
     return getBookDetail(keyId).then((book) => setBookDetails(book));
   }, []);
 
-  console.log(authorDetails);
-
   return (
     <div sx={{ width: "100%", maxWidth: 1200, margin: "0 auto 6em" }}>
       <div
