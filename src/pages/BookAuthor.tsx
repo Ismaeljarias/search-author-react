@@ -58,20 +58,10 @@ export const BookAuthor = () => {
           justifyContent: "center",
           marginTop: 20,
           marginBottom: 20,
+          alignItems: "center",
         }}>
-        <label
-          htmlFor="search"
-          sx={{
-            border: 0,
-            clip: "rect(0 0 0 0)",
-            height: 1,
-            margin: "-1px",
-            overflow: "hidden",
-            padding: 0,
-            position: "absolute",
-            width: 1,
-          }}>
-          Search an author
+        <label sx={{ paddingRight: 20 }} htmlFor="search">
+          Search for Author
         </label>
         <input
           id="search"
