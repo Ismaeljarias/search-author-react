@@ -19,6 +19,7 @@ export const BookAuthor = () => {
   const [bookDetails, setBookDetails] = useState<BookDetails | null>(null);
 
   const searchAuthorData = useCallback(async (author: string) => {
+    if (author.trim() === "") return;
     const result = await openLibrary.get<Authors>(
       `https://openlibrary.org/search/authors.json?q=${author}`
     );
@@ -79,10 +80,13 @@ export const BookAuthor = () => {
             border: "1px solid #ccc",
             borderRadius: "4px",
             boxSizing: "border-box",
+            "@media screen and (max-width: 800px)": {
+              width: "80%",
+            },
           }}
           type="text"
           onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="Search Authors"
+          placeholder="Search Author and Enter"
           onKeyPress={(e) => getAuthor(e)}
         />
       </div>
