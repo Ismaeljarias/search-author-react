@@ -83,7 +83,7 @@ export interface BookDetails {
   authors: Author[];
   excerpts: Excerpt[];
   title: string;
-  first_sentence: Created;
+  first_sentence?: Created;
   subjects?: string[];
   type: Type;
   covers?: number[];

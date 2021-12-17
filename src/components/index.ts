@@ -1,2 +1,2 @@
-export * from "./SearchBar";
-export * from "./Books";
+export * from "./Author";
+export * from "./Book";

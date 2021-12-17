@@ -7,7 +7,9 @@ interface Props {
 
 export const AuthorWork = ({ title, onClick }: Props) => {
   return (
-    <li sx={{ cursor: "pointer" }} onClick={onClick}>
+    <li
+      sx={{ cursor: "pointer", ":hover": { color: "grey" } }}
+      onClick={onClick}>
       {title}
     </li>
   );

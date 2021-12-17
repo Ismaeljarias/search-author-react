@@ -1,11 +1,12 @@
 import { ThemeProvider } from "theme-ui";
-import { SearchBar } from "./components";
+import { BookAuthor } from "./pages/BookAuthor";
+
 import theme from "./theme";
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <SearchBar />
+      <BookAuthor />
     </ThemeProvider>
   );
 };

@@ -1,7 +1,8 @@
 import { openLibrary } from "../api/openLibrary";
-import { Authors } from "../interfaces/interfaces";
+import { Authors, AuthorWork, BookDetails } from "../interfaces/interfaces";
 
-const searchAuthor = async (term: string) => {
+export const searchAuthor = async (term: string) => {
+  await new Promise((resolve) => setTimeout(resolve, 1000));
   const resp = await openLibrary.get<Authors>(
     `https://openlibrary.org/search/authors.json?q=${term}`
   );
@@ -9,25 +10,18 @@ const searchAuthor = async (term: string) => {
   return resp.data.docs;
 };
 
-const authorWork = async (authorId: string) => {
-  const resp = await openLibrary.get<Authors>(
+export const authorWork = async (authorId: string) => {
+  const resp = await openLibrary.get<AuthorWork>(
     `https://openlibrary.org/authors/${authorId}/works.json`
   );
 
-  return resp.data.docs;
+  return resp.data;
 };
 
-const workDetails = async (worksId: string) => {
-  const resp = await openLibrary.get<Authors>(
-    `https://openlibrary.org${worksId}.json`
+export const getBookDetail = async (key: string) => {
+  const resp = await openLibrary.get<BookDetails>(
+    `https://openlibrary.org/works/${key}.json`
   );
 
-  return resp.data.docs;
-};
-const coverImage = async (id: string) => {
-  const resp = await openLibrary.get<Authors>(
-    `https://covers.openlibrary.org/b/id/${id}-L.jpg`
-  );
-
-  return resp.data.docs;
+  return resp.data;
 };
