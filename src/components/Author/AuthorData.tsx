@@ -52,16 +52,18 @@ export const AuthorData = ({
             gap: 10,
           }}>
           <li>
-            <b>Birth Date:</b> {birth}
+            <b>Birth Date:</b>
+            {birth ? birth : `There is not birth data`}
           </li>
           <li>
-            <b>Death Date:</b> {death}
+            <b>Death Date:</b> {death ? death : `There is not death data`}
           </li>
           <li>
-            <b>Top Work:</b> {topWork}
+            <b>Top Work:</b> {topWork ? topWork : `There is not top work data`}
           </li>
           <li>
-            <b>Book Count:</b> {bookCount}
+            <b>Book Count:</b>{" "}
+            {bookCount ? bookCount : `There is not book count data`}
           </li>
         </ul>
       </button>

@@ -90,7 +90,7 @@ export const BookAuthor = () => {
                   key={author.key}
                   onClick={() => authorClick(author.key)}
                   name={author.name}
-                  birth={author.birth_date || ""}
+                  birth={author.birth_date!}
                   death={author.death_date || ""}
                   topWork={author.top_work}
                   bookCount={author.work_count}
