@@ -61,7 +61,7 @@ export const BookAuthor = () => {
           alignItems: "center",
         }}>
         <label sx={{ paddingRight: 20 }} htmlFor="search">
-          Search for Author
+          Search for Author:
         </label>
         <input
           id="search"
